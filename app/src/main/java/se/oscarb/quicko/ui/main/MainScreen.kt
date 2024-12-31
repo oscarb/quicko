@@ -1,0 +1,90 @@
+package se.oscarb.quicko.ui.main
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import se.oscarb.quicko.core.data.DefaultNoteRepository
+import se.oscarb.quicko.core.model.Note
+import se.oscarb.quicko.ui.main.MainUiState.Success
+import se.oscarb.quicko.ui.theme.QuickoTheme
+
+
+@Composable
+fun MainScreen(modifier: Modifier = Modifier) {
+    val viewModel: MainViewModel = remember { MainViewModel(DefaultNoteRepository()) }
+    val items by viewModel.uiState.collectAsStateWithLifecycle()
+
+    if (items is Success) {
+        NotesScreen(
+            items = (items as Success).notes,
+            onSave = { name -> viewModel.addNote(name) },
+            modifier = modifier
+        )
+    }
+
+
+}
+
+@Composable
+internal fun NotesScreen(
+    items: List<Note>,
+    onSave: (name: String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier) {
+        var nameTextNote by remember { mutableStateOf("Compose") }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 24.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            TextField(
+                value = nameTextNote,
+                onValueChange = { nameTextNote = it }
+            )
+
+            Button(modifier = Modifier.width(96.dp), onClick = { onSave(nameTextNote) }) {
+                Text("Save")
+            }
+        }
+        items.forEach {
+            Text(it.content)
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultPreview() {
+    QuickoTheme {
+        NotesScreen(
+            listOf(Note("Compose"), Note("Room"), Note("Kotlin")),
+            onSave = {})
+    }
+}
+
+@Preview(showBackground = true, widthDp = 480)
+@Composable
+private fun PortraitPreview() {
+    QuickoTheme {
+        NotesScreen(
+            listOf(Note("Compose"), Note("Room"), Note("Kotlin")),
+            onSave = {})
+    }
+}
