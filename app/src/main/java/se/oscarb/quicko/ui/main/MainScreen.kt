@@ -17,16 +17,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import se.oscarb.quicko.core.data.DefaultNoteRepository
 import se.oscarb.quicko.core.model.Note
 import se.oscarb.quicko.ui.main.MainUiState.Success
 import se.oscarb.quicko.ui.theme.QuickoTheme
 
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
-    val viewModel: MainViewModel = remember { MainViewModel(DefaultNoteRepository()) }
+fun MainScreen(modifier: Modifier = Modifier, viewModel: MainViewModel = hiltViewModel()) {
     val items by viewModel.uiState.collectAsStateWithLifecycle()
 
     if (items is Success) {

@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
-@Entity
-data class Note(
+@Entity(tableName = "note")
+data class LocalNote(
     val content: String,
 ) {
     @PrimaryKey(autoGenerate = true)
@@ -18,8 +18,8 @@ data class Note(
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM note ORDER BY uid DESC")
-    fun getNotes(): Flow<List<Note>>
+    fun getNotes(): Flow<List<LocalNote>>
 
     @Insert
-    suspend fun insert(note: Note)
+    suspend fun insert(note: LocalNote)
 }
