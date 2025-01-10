@@ -25,7 +25,9 @@ output.json
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 misc.xml
+androidTestResultsUserPreferences.xml
 deploymentTargetDropDown.xml
+deploymentTargetSelector.xml
 render.experimental.xml
 
 # Keystore files
