@@ -26,11 +26,11 @@ import se.oscarb.quicko.ui.theme.QuickoTheme
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier, viewModel: MainViewModel = hiltViewModel()) {
-    val items by viewModel.uiState.collectAsStateWithLifecycle()
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
 
-    if (items is Success) {
+    if (state is Success) {
         NotesScreen(
-            items = (items as Success).notes,
+            notes = (state as Success).notes,
             onSave = { name -> viewModel.addNote(name) },
             modifier = modifier
         )
@@ -41,7 +41,7 @@ fun MainScreen(modifier: Modifier = Modifier, viewModel: MainViewModel = hiltVie
 
 @Composable
 internal fun NotesScreen(
-    items: List<Note>,
+    notes: List<Note>,
     onSave: (name: String) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -62,7 +62,7 @@ internal fun NotesScreen(
                 Text("Save")
             }
         }
-        items.forEach {
+        notes.forEach {
             Text(it.content)
         }
     }

@@ -14,7 +14,7 @@ interface NoteRepository {
 }
 
 class DefaultNoteRepository @Inject constructor(
-    val noteDao: NoteDao
+    private val noteDao: NoteDao
 ) : NoteRepository {
     private val _notes = noteDao.getNotes()
     override val notes: Flow<List<Note>> = _notes.map { it.toDomain() }

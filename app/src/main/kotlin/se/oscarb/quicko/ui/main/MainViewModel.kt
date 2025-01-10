@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import se.oscarb.quicko.core.data.NoteRepository
 import se.oscarb.quicko.core.model.Note
+import se.oscarb.quicko.ui.main.MainUiState.Error
+import se.oscarb.quicko.ui.main.MainUiState.Success
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,8 +21,8 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     val uiState: StateFlow<MainUiState> = noteRepository.notes
-        .map<List<Note>, MainUiState> { MainUiState.Success(notes = it) }
-        .catch { emit(MainUiState.Error(it)) }
+        .map<List<Note>, MainUiState>(::Success)
+        .catch { emit(Error(it)) }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
