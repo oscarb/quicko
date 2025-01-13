@@ -1,6 +1,6 @@
 [versions]
 activityCompose = "1.9.3"
-agp = "8.7.3"
+agp = "8.8.0"
 androidxHilt = "1.2.0"
 androidxLifecycle = "2.8.7"
 composeBom = "2024.12.01"
