@@ -12,6 +12,7 @@ import se.oscarb.quicko.core.model.Note
 
 @RunWith(AndroidJUnit4::class)
 class MainScreenKtTest {
+
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 

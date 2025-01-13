@@ -36,7 +36,6 @@ fun MainScreen(modifier: Modifier = Modifier, viewModel: MainViewModel = hiltVie
         )
     }
 
-
 }
 
 @Composable
