@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Quicko"
 include(":app")
+include(":core:database")

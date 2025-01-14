@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.hilt.gradle)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.room)
     kotlin("plugin.serialization").version(libs.versions.kotlin)
 }
 
@@ -49,10 +48,6 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    room {
-        schemaDirectory("$projectDir/schemas")
-        generateKotlin = true
-    }
 }
 
 dependencies {
@@ -86,9 +81,5 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.android.compiler)
 
-    // Room
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.runtime)
-
+    implementation(project(":core:database"))
 }
