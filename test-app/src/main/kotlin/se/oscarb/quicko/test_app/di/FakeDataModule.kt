@@ -1,4 +1,4 @@
-package se.oscarb.quicko.test.app.di
+package se.oscarb.quicko.test_app.di
 
 import dagger.Binds
 import dagger.Module

@@ -18,7 +18,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "se.oscarb.quicko.test.HiltTestRunner"
+        testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -84,4 +84,5 @@ dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:data"))
     implementation(project(":core:model"))
+    androidTestImplementation(project(":core:testing"))
 }

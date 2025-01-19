@@ -1,4 +1,4 @@
-package se.oscarb.quicko.test
+package se.oscarb.quicko.core.testing
 
 import android.app.Application
 import android.content.Context

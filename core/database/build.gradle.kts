@@ -13,7 +13,7 @@ android {
     defaultConfig {
         minSdk = 31
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
