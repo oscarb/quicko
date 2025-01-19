@@ -5,11 +5,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Test
 import se.oscarb.quicko.core.database.LocalNote
 import se.oscarb.quicko.core.database.NoteDao
-
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultNoteRepositoryTest {
@@ -19,7 +18,7 @@ class DefaultNoteRepositoryTest {
 
         repository.add("Test note")
 
-        assertEquals(repository.notes.first().size, 1)
+        Assert.assertEquals(repository.notes.first().size, 1)
     }
 }
 

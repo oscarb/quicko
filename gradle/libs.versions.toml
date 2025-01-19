@@ -16,6 +16,7 @@ kotlinSerialization = "1.8.0"
 ksp = "2.1.0-1.0.29"
 lifecycleRuntimeKtx = "2.8.7"
 room = "2.7.0-alpha12"
+jetbrainsKotlinJvm = "2.1.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -54,3 +55,4 @@ hilt-gradle = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
