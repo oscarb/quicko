@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import se.oscarb.quicko.core.model.Note
+import se.oscarb.quicko.core.ui.theme.QuickoTheme
 import se.oscarb.quicko.ui.main.MainUiState.Success
-import se.oscarb.quicko.ui.theme.QuickoTheme
 
 
 @Composable

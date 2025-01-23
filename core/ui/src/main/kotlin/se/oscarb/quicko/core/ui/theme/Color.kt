@@ -1,4 +1,4 @@
-package se.oscarb.quicko.ui.theme
+package se.oscarb.quicko.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

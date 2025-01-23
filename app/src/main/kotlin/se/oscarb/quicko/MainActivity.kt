@@ -12,7 +12,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dagger.hilt.android.AndroidEntryPoint
-import se.oscarb.quicko.ui.theme.QuickoTheme
+import se.oscarb.quicko.core.ui.theme.QuickoTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
