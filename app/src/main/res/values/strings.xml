@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Quicko</string>
+    <string name="add_note_bar_label">Add note</string>
+    <string name="save_note_label">Save note</string>
 </resources>

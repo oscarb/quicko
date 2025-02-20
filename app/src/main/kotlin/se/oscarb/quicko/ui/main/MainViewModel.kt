@@ -31,7 +31,9 @@ class MainViewModel @Inject constructor(
 
     fun addNote(content: String) {
         viewModelScope.launch {
-            noteRepository.add(content)
+            if (content.isNotBlank()) {
+                noteRepository.add(content)
+            }
         }
     }
 

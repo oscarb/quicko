@@ -16,6 +16,6 @@ fun MainNavigation(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = Main, modifier = modifier) {
-        composable<Main> { MainScreen() }
+        composable<Main> { MainScreen(modifier = modifier) }
     }
 }
