@@ -12,12 +12,12 @@ espressoCore = "3.6.1"
 hilt = "2.55"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-kotlin = "2.1.0"
+kotlin = "2.2.20"
 kotlinSerialization = "1.8.0"
-ksp = "2.1.0-1.0.29"
+ksp = "2.2.20-2.0.3"
 lifecycleRuntimeKtx = "2.8.7"
 room = "2.7.0-beta01"
-jetbrainsKotlinJvm = "2.1.0"
+jetbrainsKotlinJvm = "2.2.20"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
