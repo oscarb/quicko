@@ -1,6 +1,6 @@
 [versions]
 activityCompose = "1.10.0"
-androidGradlePlugin = "8.8.1"
+androidGradlePlugin = "8.11.2"
 androidxHilt = "1.2.0"
 androidxLifecycle = "2.8.7"
 androidxNavigation = "2.8.7"
