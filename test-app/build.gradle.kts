@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.android.test)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "se.oscarb.quicko.test_app"
-    compileSdk = 35
+    compileSdk = 37
     targetProjectPath = ":app"
 
     defaultConfig {
@@ -18,9 +17,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
     }
 }
 
@@ -37,5 +33,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Compose
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
     implementation(libs.androidx.ui.test.junit4)
 }

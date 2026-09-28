@@ -2,19 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.hilt.gradle)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     kotlin("plugin.serialization").version(libs.versions.kotlin)
 }
 
 android {
     namespace = "se.oscarb.quicko"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "se.oscarb.quicko"
         minSdk = 31
-        targetSdk = 35
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -36,9 +35,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = "17"
     }
     buildFeatures {
         compose = true

@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.gradle)
     alias(libs.plugins.room)
@@ -8,7 +7,7 @@ plugins {
 
 android {
     namespace = "se.oscarb.quicko.core.database"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 31
@@ -29,9 +28,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
     }
     room {
         schemaDirectory("$projectDir/schemas")

@@ -22,8 +22,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -61,6 +59,7 @@ import kotlinx.coroutines.launch
 import se.oscarb.quicko.R
 import se.oscarb.quicko.core.model.Note
 import se.oscarb.quicko.core.ui.theme.QuickoTheme
+import se.oscarb.quicko.core.ui.theme.icon.send
 import se.oscarb.quicko.ui.main.MainUiState.Success
 
 @Composable
@@ -239,7 +238,7 @@ private fun AddNoteBar(
                 .padding(end = 16.dp)
         ) {
             Icon(
-                imageVector = Icons.AutoMirrored.Default.Send,
+                imageVector = send,
                 contentDescription = stringResource(R.string.save_note_label),
                 tint = MaterialTheme.colorScheme.primary.takeIf { isSaveNoteEnabled }
                     ?: LocalContentColor.current,
