@@ -1,0 +1,55 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": true,
+  "prHourlyLimit": 3,
+  "prConcurrentLimit": 5,
+  "packageRules": [
+    {
+      "description": "Keep AGP, Gradle wrapper, and Kotlin core tools bundled together",
+      "matchPackageNames": [
+        "com.android.tools.build:gradle",
+        "org.jetbrains.kotlin:kotlin-gradle-plugin",
+        "gradle"
+      ],
+      "matchManagers": [
+        "gradle",
+        "gradle-wrapper"
+      ],
+      "groupName": "Android build toolchain"
+    },
+    {
+      "description": "Group AndroidX Compose libraries to prevent version misalignment",
+      "matchPackagePatterns": [
+        "^androidx\\.compose"
+      ],
+      "groupName": "Jetpack Compose"
+    },
+    {
+      "description": "Group testing dependencies into one PR",
+      "matchPackagePatterns": [
+        "^org\\.junit",
+        "^io\\.mockk",
+        "^androidx\\.test"
+      ],
+      "groupName": "Testing dependencies"
+    },
+    {
+      "description": "Automerge patch-level library bumps if CI passes",
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "excludePackageNames": [
+        "com.android.tools.build:gradle",
+        "gradle"
+      ],
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ]
+}
