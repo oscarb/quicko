@@ -30,5 +30,6 @@ android {
 
 dependencies {
     implementation(libs.androidx.test.runner)
+    implementation(libs.androidx.espresso.core)
     implementation(libs.hilt.android.testing)
 }
