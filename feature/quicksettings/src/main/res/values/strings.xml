@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tile_name_quicko_note">Quicko Note</string>
+    <string name="quicko_note_dialog_title">Quicko Note</string>
+    <string name="quicko_note_hint">Enter note&#8230;</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+</resources>
