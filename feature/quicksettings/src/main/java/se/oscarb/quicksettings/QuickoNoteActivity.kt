@@ -42,14 +42,13 @@ class QuickoNoteActivity : ComponentActivity() {
                         }
                     }
                 },
-                onOpenApp = {
-                    val launchIntent = packageManager.getLaunchIntentForPackage(packageName)?.apply {
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    }
-                    launchIntent?.let { startActivity(it) }
-                    finish()
-                },
-            )
+            ) {
+                val launchIntent = packageManager.getLaunchIntentForPackage(packageName)?.apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                }
+                launchIntent?.let { startActivity(it) }
+                finish()
+            }
         }
     }
 }
