@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "se.oscarb.quicko"
-        minSdk = 31
+        minSdk = 34
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"

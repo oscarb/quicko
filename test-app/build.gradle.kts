@@ -9,7 +9,7 @@ android {
     targetProjectPath = ":app"
 
     defaultConfig {
-        minSdk = 31
+        minSdk = 34
 
         testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
     }

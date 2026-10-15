@@ -10,7 +10,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        minSdk = 31
+        minSdk = 34
 
         testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
         consumerProguardFiles("consumer-rules.pro")

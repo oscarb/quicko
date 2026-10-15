@@ -3,6 +3,8 @@
     <string name="tile_name_quicko_note">Quicko Note</string>
     <string name="quicko_note_dialog_title">Quicko Note</string>
     <string name="quicko_note_hint">Enter note&#8230;</string>
+    <string name="quicko_note_saved">Note saved</string>
+    <string name="quicko_note_open_app">Open App</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
 </resources>
