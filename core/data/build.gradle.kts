@@ -1,32 +1,13 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.hilt.gradle)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.quicko.android.library)
+    alias(libs.plugins.quicko.android.hilt)
 }
 
 android {
     namespace = "se.oscarb.quicko.core.data"
-    compileSdk = 37
 
     defaultConfig {
-        minSdk = 34
-
         testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
@@ -38,9 +19,4 @@ dependencies {
 
     implementation(project(":core:model"))
     implementation(project(":core:database"))
-
-    // Hilt
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.android)
-
 }

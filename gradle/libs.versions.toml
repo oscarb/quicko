@@ -1,4 +1,9 @@
 [versions]
+# SDK Versions
+compileSdk = "37"
+minSdk = "34"
+targetSdk = "37"
+
 activityCompose = "1.13.0"
 androidGradlePlugin = "9.4.1"
 androidxHilt = "1.4.0"
@@ -20,6 +25,13 @@ room = "2.8.5"
 jetbrainsKotlinJvm = "2.4.21"
 
 [libraries]
+# Build logic dependencies
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+hilt-gradlePlugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
+room-gradlePlugin = { group = "androidx.room", name = "androidx.room.gradle.plugin", version.ref = "room" }
+
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +62,14 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 [plugins]
+# Convention plugins
+quicko-android-application = { id = "quicko.android.application" }
+quicko-android-library = { id = "quicko.android.library" }
+quicko-android-compose = { id = "quicko.android.compose" }
+quicko-android-hilt = { id = "quicko.android.hilt" }
+quicko-android-feature = { id = "quicko.android.feature" }
+quicko-android-test = { id = "quicko.android.test" }
+
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }

@@ -1,34 +1,16 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.gradle)
+    alias(libs.plugins.quicko.android.library)
+    alias(libs.plugins.quicko.android.hilt)
     alias(libs.plugins.room)
 }
 
 android {
     namespace = "se.oscarb.quicko.core.database"
-    compileSdk = 37
 
     defaultConfig {
-        minSdk = 34
-
         testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
     room {
         schemaDirectory("$projectDir/schemas")
         generateKotlin = true
@@ -36,7 +18,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -46,8 +27,5 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
 
-    // Hilt
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
 }

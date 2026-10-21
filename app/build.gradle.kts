@@ -1,47 +1,21 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.hilt.gradle)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.quicko.android.application)
+    alias(libs.plugins.quicko.android.compose)
+    alias(libs.plugins.quicko.android.hilt)
     kotlin("plugin.serialization").version(libs.versions.kotlin)
 }
 
 android {
     namespace = "se.oscarb.quicko"
-    compileSdk = 37
 
     defaultConfig {
         applicationId = "se.oscarb.quicko"
-        minSdk = 34
-        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "se.oscarb.quicko.core.testing.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
-        }
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    buildFeatures {
-        compose = true
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
@@ -58,20 +32,14 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.kotlinx.serialization.json)
-    val composeBom = platform(libs.androidx.compose.bom)
-    implementation(composeBom)
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(composeBom)
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // Hilt
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
 
     // Hilt instrumented tests
