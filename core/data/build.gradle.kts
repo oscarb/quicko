@@ -17,6 +17,6 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
 
-    implementation(project(":core:model"))
-    implementation(project(":core:database"))
+    implementation(projects.core.model)
+    implementation(projects.core.database)
 }

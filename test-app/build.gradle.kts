@@ -13,10 +13,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":app"))
-    implementation(project(":core:data"))
-    implementation(project(":core:model"))
-    implementation(project(":core:testing"))
+    implementation(projects.app)
+    implementation(projects.core.data)
+    implementation(projects.core.model)
+    implementation(projects.core.testing)
 
     // Hilt
     ksp(libs.hilt.compiler)

@@ -46,10 +46,10 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.android.compiler)
 
-    implementation(project(":core:database"))
-    implementation(project(":core:data"))
-    implementation(project(":core:model"))
-    implementation(project(":core:ui"))
-    implementation(project(":feature:quicksettings"))
-    androidTestImplementation(project(":core:testing"))
+    implementation(projects.core.database)
+    implementation(projects.core.data)
+    implementation(projects.core.model)
+    implementation(projects.core.ui)
+    implementation(projects.feature.quicksettings)
+    androidTestImplementation(projects.core.testing)
 }
